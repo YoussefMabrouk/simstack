@@ -15,11 +15,12 @@ Please note that in each one of the shown nodes the parameters exposed via the g
 To get this WaNo up and running on your available computational resources, make sure to have the below modules installed.
 
 ```
-1. Packmol.
-2. Gromacs
-3. RSMD
-4. Gaussian
-5. Python / numpy, pandas, os, yaml
+1. packmol/20.2.2
+2. GROMACS/2019.6
+3. Gaussian/16
+4. rs@md
+5. Python/3.6, numpy, pandas, os, sys, yaml, csv
+6. OpenMPI/3.1.4, GCC/8.3.0, Boost/1.70.0 
 ```
 
 ## 3. Running this workflow
