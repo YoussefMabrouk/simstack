@@ -9,7 +9,7 @@ Please note that in each one of the shown nodes the parameters exposed via the g
 
 ![rsmd workflow GUI](https://github.com/YoussefMabrouk/simstack-rsmd/blob/main/worklow.png)
 
-**Fig 1** The worklod enables the performance of rsmd calculations using the rsmd and gromacs code. 
+**Fig 1** The workflow enables the performance of rsmd calculations combining the packmol, gromacs and rsmd codes. 
 
 ## 1. Sotware installations
 To get this WaNo up and running on your available computational resources, make sure to have the below modules installed.
