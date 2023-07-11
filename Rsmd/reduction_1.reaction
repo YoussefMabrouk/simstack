@@ -1,0 +1,67 @@
+[name]
+reduction_1
+
+[reactants]
+# molecule nr    molecule name   atom name   atom nr
+  1      EC           O1          1
+  1		 EC      	  C1          2 
+  1		 EC      	  O2	      3   
+  1		 EC      	  C2          4  
+  1		 EC           H1          5   
+  1		 EC      	  H2          6  
+  1		 EC           O3          7  
+  1		 EC      	  C3          8  
+  1		 EC      	  H3          9  
+  1		 EC           H4         10 
+  2      LI           Li1         1
+  3      cEC          O1          1          
+  3		 cEC      	  C1          2		     
+  3		 cEC      	  O2	      3          
+  3		 cEC      	  C2          4          
+  3		 cEC          H1          5         
+  3		 cEC      	  H2          6           
+  3		 cEC          O3          7           
+  3		 cEC      	  C3          8           
+  3		 cEC      	  H3          9            
+  3		 cEC          H4         10
+  4      A            A1          1
+  
+  
+
+[products]
+# molecule nr    molecule name   atom name   atom nr     origin->moleculeNr      origin->atomNr
+  1      cEC          O1          1          1                       1
+  1		 cEC      	  C1          2		     1			             2 
+  1		 cEC      	  O2	      3          1                       3   
+  1		 cEC      	  C2          4          1                       4  
+  1		 cEC          H1          5          1                       5   
+  1		 cEC      	  H2          6          1                       6  
+  1		 cEC          O3          7          1                       7  
+  1		 cEC      	  C3          8          1                       8  
+  1		 cEC      	  H3          9          1                       9  
+  1		 cEC          H4         10          1                      10 
+  2      LI           Li1         1          2                       1
+  3      LI           Li1         1          4                       1
+  4      cEC          O1          1          3                       1          
+  4		 cEC      	  C1          2		     3                       2
+  4		 cEC      	  O2	      3          3                       3
+  4		 cEC      	  C2          4          3                       4
+  4		 cEC          H1          5          3                       5
+  4		 cEC      	  H2          6          3                       6 
+  4		 cEC          O3          7          3                       7
+  4		 cEC      	  C3          8          3                       8 
+  4		 cEC      	  H3          9          3                       9  
+  4		 cEC          H4         10          3                      10
+
+
+[criteria] 
+# type   molID   atomID   minValue   maxValue
+ZONE  	 1       1        0.0        1.0
+DIST  	 1       1        2       1 	   0.0        0.2
+DIST  	 1       1        3       1 	   0.0        0.5
+
+
+[rate]
+# dist  value
+  0.5  0.12               
+               

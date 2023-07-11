@@ -1,0 +1,38 @@
+[ moleculetype ]
+;name            nrexcl
+C2H4            3
+
+[ atoms ]
+;   nr  type       resi  res  atom  cgnr     charge      mass    ; bond_type  ; charge from
+     1 opls_774     1    C2H4     C1    5    -0.376446     12.01100 ; CT           ,,
+     2 opls_774     1    C2H4     C2    6    -0.402952     12.01100 ; CT           ,,    
+     3 opls_777     1    C2H4     H1    7     0.238229      1.00800 ; HC           EC parametrization
+     4 opls_777     1    C2H4     H2    8     0.140401      1.00800 ; HC           ,,
+     5 opls_777     1    C2H4     H3    9     0.136841      1.00800 ; HC           ,, 
+     6 opls_777     1    C2H4     H4   10     0.224583      1.00800 ; HC           ,, 
+
+[ bonds ]
+;   ai     aj funct   r             k       ; description   comments    
+     1      2   1     0.15290   224262.4    ; CT - CT       orig opls_aa
+     1      3   1     0.10900   284512.0    ; CT - HC       orig opls_aa
+     1      4   1     0.10900   284512.0    ; ,,    
+     2      5   1     0.10900   284512.0    ; ,,    
+     2      6   1     0.10900   284512.0    ; ,,     
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth    ; description      comments
+     1      2      5      1     119.700    292.880   ; CT - CT - HC     ! sp2, trig planar, from C-CM-HC (alkene) in opls_aa 
+     1      2      6      1     119.700    292.880   ; ,,  
+     2      1      3      1     110.700    313.800   ; CT - CT - HC     sp3, orig opls_aa
+     2      1      4      1     110.700    313.800   ; ,,
+     3      1      4      1     107.800    276.144   ; HC - CT - HC     orig opls_aa
+     5      2      6      1     117.000    292.880   ; HC - CT - HC     ! sp2, trig planar, from HC-CM-HC (alkene) opls_aa 
+     
+     
+[ dihedrals ] ; propers
+;    i      j      k      l   func    C0         C1         C2         C3         C4         C5 ; description       comment
+     3      1      2      5      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; HC - CT - CT - HC     ! last CT-HC trig planar! incorporate everything in OS-CT-CT-HC via fit from g09
+     3      1      2      6      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,
+     4      1      2      5      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,
+     4      1      2      6      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,     
+    

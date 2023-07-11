@@ -1,0 +1,65 @@
+[name]
+dimerization_4.reaction
+
+[reactants]
+# molecule nr    molecule name   atom name   atom nr
+  1      oEC          C1          1 
+  1		 oEC      	  O1          2	
+  1		 oEC      	  O2	      3
+  1		 oEC      	  O3          4
+  1		 oEC          C2          5  
+  1		 oEC      	  C3          6 
+  1		 oEC          H1          7   
+  1		 oEC      	  H2          8  
+  1		 oEC      	  H3          9
+  1		 oEC          H4         10 
+  2      oEC          C1          1 
+  2		 oEC      	  O1          2	
+  2		 oEC      	  O2	      3
+  2		 oEC      	  O3          4
+  2		 oEC          C2          5  
+  2		 oEC      	  C3          6 
+  2		 oEC          H1          7   
+  2		 oEC      	  H2          8  
+  2		 oEC      	  H3          9
+  2		 oEC          H4         10
+  3      LI           Li1         1
+  4      LI           Li1         1
+
+[products]
+# molecule nr    molecule name   atom name   atom nr     origin->moleculeNr      origin->atomNr
+  1      EDC          O1          1          1                       2
+  1		 EDC      	  O2          2		     1			             3 
+  1		 EDC      	  C1	      3          1                       1   
+  1		 EDC      	  O3          4          1                       4  
+  1		 EDC          C2          5          1                       5   
+  1		 EDC      	  H1          6          1                       7 
+  1		 EDC          H2          7          1                       8  
+  1		 EDC      	  C3          8          1                       6  
+  1		 EDC      	  H3          9          1                       9  
+  1		 EDC          H4         10          1			            10 
+  1		 EDC          O4         11          2			             4 
+  1		 EDC          C4         12          2			             1 
+  1		 EDC          O5         13          2 			             3
+  1		 EDC          O6         14          2                       2
+  2      C2H4         C1          1          2                       5
+  2		 C2H4      	  C2          2		     2			             6 
+  2		 C2H4      	  H1	      3          2                       7   
+  2		 C2H4      	  H2          4          2                       8  
+  2		 C2H4         H3          5          2                       9   
+  2		 C2H4      	  H4          6          2                      10
+  3      LI           Li1         1          3                       1
+  4      LI           Li1         1          4                       1
+
+
+[criteria]
+# type   molID   atomID   molID   atomID   minValue   maxValue
+DIST  	 1       6        2       4 	   0.0        0.4
+DIST  	 1       1        3       1 	   0.0        0.3
+DIST  	 2       1        4       1 	   0.0        0.3
+
+
+
+[rate]
+# dist  value
+  0.5  6.12

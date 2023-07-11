@@ -1,0 +1,40 @@
+[name]
+opening_1
+
+[reactants]
+# molecule nr    molecule name   atom name   atom nr
+  1      cEC          O1          1
+  1		 cEC      	  C1	      2
+  1		 cEC      	  O2          3 
+  1		 cEC      	  C2          4
+  1		 cEC          H1          5   
+  1		 cEC      	  H2          6   
+  1		 cEC          O3          7 
+  1		 cEC      	  C3          8   
+  1		 cEC      	  H3          9  
+  1		 cEC          H4         10 
+  2      LI           Li1         1
+
+[products]
+# molecule nr    molecule name   atom name   atom nr     origin->moleculeNr      origin->atomNr
+  1      oEC          C1          1          1                       2
+  1		 oEC      	  O1          2		     1			             1 
+  1		 oEC      	  O2	      3          1                       7   
+  1		 oEC      	  O3          4          1                       3  
+  1		 oEC          C2          5          1                       4   
+  1		 oEC      	  C3          6          1                       8  
+  1		 oEC          H1          7          1                       5  
+  1		 oEC      	  H2          8          1                       6  
+  1		 oEC      	  H3          9          1                       9  
+  1		 oEC          H4         10          1                      10
+  2      LI           Li1         1          2                       1 
+
+[criteria]
+# type   molID   atomID   molID   atomID   minValue   maxValue
+DIST  	 1       1        2       1 	   0.0        0.2
+
+
+[rate]
+# dist  value
+  0.5   0.21
+

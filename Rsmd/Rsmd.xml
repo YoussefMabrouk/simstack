@@ -1,0 +1,77 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Y. Mabrouk </Name>
+  			<Email>mabrouk@uni-muenster.de</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo performs a Rsmd calculation.
+ 		</Description>
+
+ 		<Keyword>Rsmd</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="Rsmd">
+    <!--<WaNoFile logical_filename="Input-File_1"  name="Input-File_1">Gaussian/outputs/Neutral.out</WaNoFile>
+    <WaNoFile logical_filename="Input-File_2"  name="Input-File_2">Gaussian/outputs/Vertical.out</WaNoFile>-->
+    <WaNoFile logical_filename="Input-File"  name="Input-File">Gromacs/outputs/npt.gro</WaNoFile>    
+		<WaNoMultipleOf name="Parameters">
+ 			<Element id="0">
+			 	
+				 <WaNoDropDown name="System">
+					<Entry id="0" chosen="True">Rate</Entry>
+					<Entry id="1">MC</Entry>
+				</WaNoDropDown>
+
+				<WaNoFloat name="cycles">0.0</WaNoFloat>
+				<WaNoFloat name="nsteps">0.0</WaNoFloat>
+ 			</Element>
+ 		</WaNoMultipleOf>
+
+	</WaNoRoot>
+	<!-- <WaNoFloat name="vf-x">1.0</WaNoFloat>
+				<WaNoFloat name="vf-y">1.0</WaNoFloat> -->	
+	<WaNoExecCommand>
+        bash config.sh
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+        <WaNoInputFile logical_filename="config.sh">config.sh</WaNoInputFile>
+		<WaNoInputFile logical_filename="read_wano.py">read_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="write_wano.py">write_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="initial.gro">initial.gro</WaNoInputFile>
+        <WaNoInputFile logical_filename="topology.top">topology.top</WaNoInputFile>
+        <WaNoInputFile logical_filename="ff.itp">ff.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="ffbonded.itp">ffbonded.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="ffnonbonded.itp">ffnonbonded.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="npt.mdp">npt.mdp</WaNoInputFile>
+        <WaNoInputFile logical_filename="EC.itp">EC.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="Li+.itp">Li+.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="PF6-.itp">PF6-.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="cEC.itp">cEC.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="oEC.itp">oEC.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="edc.itp">edc.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="bdc.itp">bdc.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="C2H4.itp">C2H4.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="CO3.itp">CO3.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="reduction_0.reaction">reduction_0.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="reduction_1.reaction">reduction_1.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="reduction_2.reaction">reduction_2.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="opening_1.reaction">opening_1.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="dimerization_1.reaction">dimerization_1.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="dimerization_2.reaction">dimerization_2.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="dimerization_3.reaction">dimerization_3.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="dimerization_4.reaction">dimerization_4.reaction</WaNoInputFile>
+        <WaNoInputFile logical_filename="INPUT">INPUT</WaNoInputFile>
+        <WaNoInputFile logical_filename="cycle.mdp">cycle.mdp</WaNoInputFile>
+        <WaNoInputFile logical_filename="relaxation.mdp">relaxation.mdp</WaNoInputFile>
+        <WaNoInputFile logical_filename="A.itp">A.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="G.itp">G.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="S.itp">S.itp</WaNoInputFile>
+	</WaNoInputFiles>
+	<WaNoOutputFiles>
+		<WaNoOutputFile>statistics.data</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>

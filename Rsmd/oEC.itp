@@ -1,0 +1,109 @@
+[ moleculetype ]
+;name            nrexcl
+ oEC             3
+
+[ atoms ]
+;   nr  type       resi  res  atom  cgnr     charge      mass    ; bond_type  ; charge from
+     1 opls_271     1    oEC     C1    1     1.1014     12.01100 ; C_3          HF/6-31G(d) opt +
+     2 opls_272     1    oEC     O1    2    -0.8483     15.99940 ; O2           MP2/cc-pVTZ(-f) singlepoint
+     3 opls_272     1    oEC     O2    3    -0.8483     15.99940 ; O2           CHelpG charges
+     4 opls_773     1    oEC     O3    4    -0.6442     15.99940 ; OS           ,,
+     5 opls_774     1    oEC     C2    5     0.4376     12.01100 ; CT           ,,
+     6 opls_774     1    oEC     C3    6    -0.6146     12.01100 ; CT           ,,    
+     7 opls_777     1    oEC     H1    7     0.1041      1.00800 ; HC           EC parametrization
+     8 opls_777     1    oEC     H2    8     0.1041      1.00800 ; HC           ,,
+     9 opls_777     1    oEC     H3    9     0.1041      1.00800 ; HC           ,, 
+    10 opls_777     1    oEC     H4   10     0.1041      1.00800 ; HC           ,, 
+
+[ bonds ]
+;   ai     aj funct   r             k       ; description   comments  
+     1      2   1     0.12500   548940.8    ; C_3 - O2      orig opls_aa     
+     1      3   1     0.12500   548940.8    ; ,,     
+     1      4   1     0.14100   267776.0    ; C_3 - OS      orig CT-OS in opls_aa, length matches geoOpt  
+     4      5   1     0.14100   267776.0    ; OS - CT       orig opls_aa    
+     5      6   1     0.15290   224262.4    ; CT - CT       orig opls_aa
+     5      7   1     0.10900   284512.0    ; CT - HC       orig opls_aa
+     5      8   1     0.10900   284512.0    ; ,,    
+     6      9   1     0.10900   284512.0    ; ,,    
+     6     10   1     0.10900   284512.0    ; ,,     
+
+[ pairs ]
+;   ai     aj    funct
+     1      6      1    
+     1      7      1    
+     1      8      1    
+     2      5      1    
+     3      5      1    
+     4      9      1    
+     4     10      1    
+     7      9      1    
+     7     10      1    
+     8      9      1    
+     8     10      1    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth    ; description      comments
+     1      4      5      1     116.900    694.544   ; C_3 - OS - CT    C-OS-CT in opls_aa, angles matches geoOpt in g09
+     2      1      3      1     132.149    669.440   ; O2 - C_3 - O2    orig opls_aa: 126.000    669.440, this angle from geoOpt in g09
+     2      1      4      1     113.925    836.800   ; O2 - C_3 - OS    orig opls_aa O2-P-OS: 108.230    836.800, this angle from geoOpt in g09
+     3      1      4      1     113.925    836.800   ; ,,
+     4      5      6      1     109.500    418.400   ; OS - CT - CT     orig opls_aa, geoOpt suggests 110.984
+     4      5      7      1     109.500    292.880   ; OS - CT - HC     orig opls_aa
+     4      5      8      1     109.500    292.880   ; ,,
+     5      6      9      1     119.700    292.880   ; CT - CT - HC     ! sp2, trig planar, from C-CM-HC (alkene) in opls_aa 
+     5      6     10      1     119.700    292.880   ; ,,  
+     6      5      7      1     110.700    313.800   ; CT - CT - HC     sp3, orig opls_aa
+     6      5      8      1     110.700    313.800   ; ,,
+     7      5      8      1     107.800    276.144   ; HC - CT - HC     orig opls_aa
+     9      6     10      1     117.000    292.880   ; HC - CT - HC     ! sp2, trig planar, from HC-CM-HC (alkene) opls_aa 
+
+[ dihedrals ] ; propers
+;    i      j      k      l   func    C0         C1         C2         C3         C4         C5 ; description       comment
+     1      4      5      6      3    40.34710  44.17820  -5.99190  -6.82090   8.64250   0.00000 ; C_3 - OS - CT - CT , fit to MP2/cc-pVTZ(-f)//HF/6-31G(d) data
+     1      4      5      7      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; C_3 - OS - CT - HC , incorporate everything in C_3-OS-CT-CT via fit to g09 data
+     1      4      5      8      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,     ,,
+     2      1      4      5      3    15.37518   0.00000 -11.45678   0.00000  -3.94265   0.00000 ; O2 - C_3 - OS - CT  refitted orig opls_aa carboxylate ion (CT-CT-C_3-O2) to MP2/cc-pVTZ(-f)//HF/6-31G(d) data
+     3      1      4      5      3    15.37518   0.00000 -11.45678   0.00000  -3.94265   0.00000 ; ,, 
+     4      5      6      9      3     2.61865   0.00000  -2.60680   0.16640  -0.06110   0.00000 ; OS - CT - CT - HC   , fit to MP2/cc-pVTZ(-f)//HF/6-31G(d) data due to planar CT-HC group
+     4      5      6     10      3     2.61865   0.00000  -2.60680   0.16640  -0.06110   0.00000 ; ,,
+     7      5      6      9      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; HC - CT - CT - HC     ! last CT-HC trig planar! incorporate everything in OS-CT-CT-HC via fit from g09
+     7      5      6     10      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,
+     8      5      6      9      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,
+     8      5      6     10      3     0.00000   0.00000   0.00000   0.00000   0.00000   0.00000 ; ,,
+
+;[ dihedrals ] ; impropers
+; treated as propers in GROMACS to use correct AMBER analytical function
+;    i      j      k      l   func   phase     kd      pn
+     4      1      3      2       1    180.0    43.93200   2 ; OS-C_3-O2-O2  from opls aa: O?-C -X -Y improper torsion. C can be C_2 or C_3 too.
+
+;--> fit parameter Ryeckart-Bellemans: 1-4-5-6
+;C0 =  5.004951485707845  +-  0.047556913222382605 kcal/mol  ~=  20.9407 kJ/mol
+;C1 =  9.651455875036694  +-  0.09438779279698377 kcal/mol  ~=  40.3817 kJ/mol
+;C2 =  -9.993445041565654e-14  +-  0.24566157798576232 kcal/mol  ~=  -0.0 kJ/mol
+;C3 =  -3.5681255787348936  +-  0.11776042040114032 kcal/mol  ~=  -14.929 kJ/mol
+;C4 =  2.2911666964642112  +-  0.23572107573048953 kcal/mol  ~=  9.5862 kJ/mol
+
+;--> fit parameter Ryeckart-Bellemans: 1-4-5-6 round 2
+;C0 =  4.638247604831865  +-  0.044835338549389814 kcal/mol  ~=  19.4064 kJ/mol
+;C1 =  0.9073811449630167  +-  0.08906819107391607 kcal/mol  ~=  3.7965 kJ/mol
+;C2 =  -1.4320886960468844  +-  0.23158036151596226 kcal/mol  ~=  -5.9919 kJ/mol
+;C3 =  1.9378879133834026  +-  0.11112345044084185 kcal/mol  ~=  8.1081 kJ/mol
+;C4 =  -0.2255461421996133  +-  0.22224686007074992 kcal/mol  ~=  -0.9437 kJ/mol
+
+;--> fit parameter Ryeckart-Bellemans: 4-5-6-10
+;C0 =  1.2517331921444828  +-  0.0555373007071118 kcal/mol  ~=  5.2373 kJ/mol
+;C1 =  9.999999803079196e-13  +-  0.11032957901501855 kcal/mol  ~=  0.0 kJ/mol
+;C2 =  -1.2460902963894693  +-  0.28685734804653135 kcal/mol  ~=  -5.2136 kJ/mol
+;C3 =  0.07952920915748783  +-  0.13764974429676585 kcal/mol  ~=  0.3328 kJ/mol
+;C4 =  -0.029196498693279203  +-  0.2752959449071001 kcal/mol  ~=  -0.1222 kJ/mol
+
+;--> fit parameter Ryeckart-Bellemans: 3-1-4-5
+;C0 =  5.709512244065808  +-  0.04933796153586741 kcal/mol  ~=  23.8886 kJ/mol
+;C1 =  9.999999533348012e-13  +-  0.09800921553124856 kcal/mol  ~=  0.0 kJ/mol
+;C2 =  -3.836473878877841  +-  0.254837025681999 kcal/mol  ~=  -16.0518 kJ/mol
+;C3 =  9.999999924432627e-12  +-  0.12227878432935105 kcal/mol  ~=  0.0 kJ/mol
+;C4 =  -1.8846337913537132  +-  0.24456622461849067 kcal/mol  ~=  -7.8853 kJ/mol
+
+[ dihedral_restraints ]
+; i     j       k       l       type    phi     dphi    fc
+

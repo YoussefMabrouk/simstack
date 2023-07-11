@@ -1,0 +1,82 @@
+[ moleculetype ]
+; Name      nrexcl
+cEC          3
+
+
+[atoms]
+; nr type resnr residue atom cgnr charge mass chargeB
+1    opls_771   0   cEC  O1  2  -0.6219  15.9994    
+2    opls_772   0   cEC  C1  2   0.1251  12.011     
+3    opls_773   0   cEC  O2  2  -0.3973  15.9994    
+4    opls_774   0   cEC  C2  1   0.3379  12.011     
+5    opls_777   0   cEC  H1  1  -0.0961   1.008     
+6    opls_777   0   cEC  H2  1  -0.0961   1.008     
+7    opls_773   0   cEC  O3  2  -0.3973  15.9994    
+8    opls_774   0   cEC  C3  3   0.3379  12.011     
+9    opls_777   0   cEC  H3  3  -0.0961   1.008      
+10   opls_777   0   cEC  H4  3  -0.0961   1.008      
+
+
+[ bonds ]
+; ai  aj  funct   c0  c1  c2  c3
+4    5   1  
+4    6   1
+4    3   1
+4    8   1
+3    2   1
+2    1   1
+2    7   1
+7    8   1
+8    9   1
+8    10  1
+
+
+[ pairs ]
+; ai  aj  funct   c0  c1  c2  c3
+1    9   1
+1    10  1
+1    5   1
+1    6   1
+
+
+[ angles ]
+; ai  aj  ak  funct   c0  c1  c2  c3
+5    4   6   1
+5    4   3   1
+5    4   8   1
+6    4   3   1
+6    4   8   1
+3    4   8   1
+4    3   2   1
+3    2   1   1
+3    2   7   1      1.1138e+02    6.3973e+02 ;     OS - C - OS (amber gaff via acpype) 
+1    2   7   1
+2    7   8   1
+4    8   7   1
+4    8   9   1
+4    8   10  1
+7    8   9   1
+7    8   10  1
+9    8   10  1
+
+
+[ dihedrals ]
+; ai  aj  ak  al  funct   c0  c1  c2  c3  c4  c5
+5    4   3   2   3
+6    4   3   2   3
+8    4   3   2   3
+5    4   8   7   3
+5    4   8   9   3
+5    4   8   10  3
+6    4   8   7   3
+6    4   8   9   3
+6    4   8   10  3
+3    4   8   7   3
+3    4   8   9   3
+3    4   8   10  3
+4    3   2   1   3
+1    2   7   8   3
+2    7   8   4   3
+2    7   8   9   3
+2    7   8   10  3
+

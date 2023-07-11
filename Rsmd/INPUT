@@ -1,0 +1,25 @@
+[simulation]
+engine          = gmx 
+cycles     = 10 
+
+[reaction]
+file            = reduction_0.reaction
+file            = reduction_1.reaction
+file            = reduction_2.reaction
+file            = opening_1.reaction
+file            = dimerization_1.reaction
+file            = dimerization_2.reaction
+file            = dimerization_3.reaction
+file            = dimerization_4.reaction
+
+mc              = off
+rate            = on
+frequency       = 1.0        
+saveRejected    = off 
+
+[gromacs]
+topology        = topology.top
+coordinates     = Input-File
+mdp             = cycle.mdp 
+mdp.relaxation  = relaxation.mdp 
+backup          = off
