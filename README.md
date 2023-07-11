@@ -1,15 +1,13 @@
 # simstack-rsmd
-Workflow for SEI simulations based on RSMD
-
-When publishing results obtained with RSMD **WaNo**, please consider citing it. [![DOI](https://zenodo.org/badge/341835878.svg)](https://zenodo.org/badge/latestdoi/341835878)
+Workflow for SEI simulations based on rsmd
 
 This is a simtack workflow template to show how the rsmd software can be integrated with other molecular simulations software to build a sequence of simulations enabling flow of parameters and data across multiple softwares. 
 
-Figure 1 illustrates the layout of the workflow, which features the four possible simulations nodes, packmol, gromacs, rsmd and gaussian. In this workflow packmol is used to build the unit cell by generating initial xyz coordinates of the molecules for the LiPF6 EC model system, allowing the used to set the molar concentration by choosing the number of LiPF6 pairs in reference to the number of EC molecules from the gui. 
-After this initial step, the xyz file is passed to gromacs to perform an equilibration run such that the system achieves a specific temperature. This is because the initial xyz file does not know yet about the temperature. For this step, it is possible to specify the kind of temperature coupling used by the gromacs engine as well as the reference temperature and number of integration steps from the gui. This step updates the xyz coordinates and writes the final velocities to a .gro formated file, which is passed as input for the rsmd node. Finally, the rsmd node to change the number of reactive cycles performed to the input file.
-Please note that in each one of the shown nodes the parameters exposed via the gui are only a subset of the parameters usually required to start the simulations. In this template, the parameters that are not exposed via the gui are written in the input files within the wanos, and the used should change this in case it is needed.
+Figure 1 illustrates the layout of the workflow, which features the four possible simulations nodes, packmol, gromacs, rsmd and gaussian. In this workflow packmol is used to build the unit cell by generating initial xyz coordinates of the molecules for the LiPF6 EC model system, allowing the user to set the molar concentration by choosing the number of LiPF6 pairs in reference to the number of EC molecules from the gui. 
+After this initial step, the xyz file is passed to gromacs to perform an equilibration run, such that the system achieves a specific temperature. This is because the initial xyz file does not know about the temperature. For this step, it is possible to specify the kind of temperature coupling used by the gromacs engine as well as the reference temperature and number of integration steps from the gui. This step updates the xyz coordinates and writes the final velocities to a .gro formated file, which is passed as input for the rsmd node. Finally, the rsmd node allows to change the number of reactive cycles performed to the input file.
+Please note that in each one of the shown nodes the parameters exposed via the gui are only a subset of the parameters required to start the simulations. In this template, the parameters that are not exposed via the gui are written in the input files within the wanos, and the user should change this in case it is needed.
 
-![DFT-VASP WaNo GUI](https://github.com/YoussefMabrouk/simstack-rsmd/blob/main/worklow.png)
+![rsmd workflow GUI](https://github.com/YoussefMabrouk/simstack-rsmd/blob/main/worklow.png)
 
 **Fig 1** The worklod enables the performance of rsmd calculations using the rsmd and gromacs code. 
 
@@ -36,9 +34,8 @@ To get this WaNo up and running on your available computational resources, make 
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 957189. The project is part of BATTERY 2030+, the large-scale European research initiative for inventing the sustainable batteries of the future.
 
 ## License & copyright
-  Developer: Celso Ricardo C. Rêgo, 
+  Developer: Youssef Mabrouk, 
+  Forschungszentrum Jülich GmbH, Helmholtz-Institute Münster (IEK-12),
+  with support of Celso Rego, 
   Multiscale Materials Modelling and Virtual Design,
   Institute of Nanotechnology, Karlsruhe Institute of Technology
-  https://www.int.kit.edu/wenzel.php
-
-Licensed under the [KIT License](LICENSE).
