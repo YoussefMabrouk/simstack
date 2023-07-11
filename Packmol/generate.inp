@@ -1,0 +1,29 @@
+                     
+                     
+                     
+tolerance 2.0
+
+filetype pdb
+
+output start.pdb
+
+structure EC.pdb
+  number 100.0 
+  inside box 2.0 2.0 2.0 35.0 35.0 170.0
+end structure 
+
+structure PF6-.pdb
+  number 10.0 
+  inside box 2.0 2.0 2.0 35.0 35.0 170.0
+end structure
+
+structure Li+.pdb
+  number 10.0 
+  inside box 2.0 2.0 2.0 35.0 35.0 170.0
+end structure
+
+structure A.pdb
+  number 400   
+  inside box 2.0 2.0 70.0 35.0 35.0 170.0
+end structure
+

@@ -1,0 +1,46 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Y. Mabrouk </Name>
+  			<Email>mabrouk@uni-muenster.de</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo performs a Packmol calculation.
+ 		</Description>
+
+ 		<Keyword>Packmol</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="Packmol">
+		<WaNoMultipleOf name="Parameters">
+ 			<Element id="0">
+			 	
+				<WaNoFloat name="Li+">1</WaNoFloat>
+				<WaNoFloat name="PF6-">1</WaNoFloat>
+                <WaNoFloat name="EC">1</WaNoFloat>
+ 			</Element>
+ 		</WaNoMultipleOf>
+
+	</WaNoRoot>
+	<!-- <WaNoFloat name="vf-x">1.0</WaNoFloat>
+				<WaNoFloat name="vf-y">1.0</WaNoFloat> -->	
+	<WaNoExecCommand>
+        bash config.sh
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+        <WaNoInputFile logical_filename="config.sh">config.sh</WaNoInputFile>
+		<WaNoInputFile logical_filename="read_wano.py">read_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="write_wano.py">write_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="generate.inp">generate.inp</WaNoInputFile>
+        <WaNoInputFile logical_filename="EC.pdb">EC.pdb</WaNoInputFile>
+        <WaNoInputFile logical_filename="Li+.pdb">Li+.pdb</WaNoInputFile>
+        <WaNoInputFile logical_filename="PF6-.pdb">PF6-.pdb</WaNoInputFile>
+        <WaNoInputFile logical_filename="A.pdb">A.pdb</WaNoInputFile>
+	</WaNoInputFiles>
+	<WaNoOutputFiles>
+		<WaNoOutputFile>start.pdb</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>
