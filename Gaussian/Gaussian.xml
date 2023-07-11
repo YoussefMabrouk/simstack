@@ -1,0 +1,51 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Y. Mabrouk </Name>
+  			<Email>mabrouk@uni-muenster.de</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo performs a Gaussian calculation.
+ 		</Description>
+
+ 		<Keyword>Gaussian</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="Gaussian">
+		<WaNoMultipleOf name="Parameters">
+ 			<Element id="0">
+			 	
+				 <WaNoDropDown name="System">
+					<Entry id="0" chosen="True">Gas-Phase</Entry>
+					<Entry id="1">PCM-Water </Entry>
+				</WaNoDropDown>
+
+				<WaNoFloat name="Spin">0.0</WaNoFloat>
+				<WaNoFloat name="Charge">0.0</WaNoFloat>
+ 			</Element>
+ 		</WaNoMultipleOf>
+
+	</WaNoRoot>
+	<!-- <WaNoFloat name="vf-x">1.0</WaNoFloat>
+				<WaNoFloat name="vf-y">1.0</WaNoFloat> -->	
+	<WaNoExecCommand>
+        bash config.sh
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+        <WaNoInputFile logical_filename="config.sh">config.sh</WaNoInputFile>
+		<WaNoInputFile logical_filename="read_wano.py">read_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="write_wano.py">write_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="LiEC6.xyz">LiEC6.xyz</WaNoInputFile>
+        <WaNoInputFile logical_filename="Neutral.com">Neutral.com</WaNoInputFile>
+        <WaNoInputFile logical_filename="Vertical.com">Vertical.com</WaNoInputFile>
+        <WaNoInputFile logical_filename="Opt.com">Opt.com</WaNoInputFile>
+	</WaNoInputFiles>
+	<WaNoOutputFiles>
+		<WaNoOutputFile>Neutral.out</WaNoOutputFile>
+		<WaNoOutputFile>Vertical.out</WaNoOutputFile>
+        <WaNoOutputFile>Opt.out</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>
