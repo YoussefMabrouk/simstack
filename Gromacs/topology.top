@@ -1,0 +1,18 @@
+#include "ff.itp"
+#include "EC.itp"
+#include "PF6-.itp"
+#include "Li+.itp"
+#include "G.itp"
+#include "S.itp"
+#include "A.itp"
+
+[system]
+EC_LiPF6
+
+[molecules]
+LI      140  
+A       400   
+PF6     140  
+EC     1800  
+G      3300
+S       170

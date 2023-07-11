@@ -1,0 +1,7 @@
+[ moleculetype ]
+; name       nrexcl
+S                3
+
+[ atoms ]
+;  nr   type  resnr  residu   atom   cgnr    charge
+    1   S        1  S       C1       1    0.0000

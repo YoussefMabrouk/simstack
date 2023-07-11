@@ -1,0 +1,61 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Y. Mabrouk </Name>
+  			<Email>mabrouk@uni-muenster.de</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo performs a Gromacs calculation.
+ 		</Description>
+
+ 		<Keyword>Gromacs</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="Gromacs">
+    <WaNoFile logical_filename="Input-File"  name="Input-File">Packmol/outputs/start.pdb</WaNoFile>    
+		<WaNoMultipleOf name="Parameters">
+ 			<Element id="0">
+			 	
+				 <WaNoDropDown name="tcoupl">
+					<Entry id="0" chosen="True">nose-hoover</Entry>
+					<Entry id="1">berendsen</Entry>
+				</WaNoDropDown>
+
+				<WaNoFloat name="nsteps">0.0</WaNoFloat>
+				<WaNoFloat name="ref-t">0.0</WaNoFloat>
+                <WaNoFloat name="nsxtcout">0.0</WaNoFloat>
+ 			</Element>
+ 		</WaNoMultipleOf>
+
+	</WaNoRoot>
+	<!-- <WaNoFloat name="vf-x">1.0</WaNoFloat>
+				<WaNoFloat name="vf-y">1.0</WaNoFloat> -->	
+	<WaNoExecCommand>
+        bash config.sh
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+        <WaNoInputFile logical_filename="config.sh">config.sh</WaNoInputFile>
+		<WaNoInputFile logical_filename="read_wano.py">read_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="write_wano.py">write_wano.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="pdbTOgro.py">pdbTOgro.py</WaNoInputFile>
+        <WaNoInputFile logical_filename="initial.gro">initial.gro</WaNoInputFile>
+        <WaNoInputFile logical_filename="start.xyz">start.xyz</WaNoInputFile>
+        <WaNoInputFile logical_filename="topology.top">topology.top</WaNoInputFile>
+        <WaNoInputFile logical_filename="ff.itp">ff.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="ffbonded.itp">ffbonded.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="ffnonbonded.itp">ffnonbonded.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="npt.mdp">npt.mdp</WaNoInputFile>
+        <WaNoInputFile logical_filename="EC.itp">EC.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="Li+.itp">Li+.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="PF6-.itp">PF6-.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="G.itp">G.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="S.itp">S.itp</WaNoInputFile>
+        <WaNoInputFile logical_filename="A.itp">A.itp</WaNoInputFile>
+	</WaNoInputFiles>
+	<WaNoOutputFiles>
+		<WaNoOutputFile>npt.gro</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>
