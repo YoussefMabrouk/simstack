@@ -1,7 +1,8 @@
-# simstack-rsmd
-Workflow for SEI simulations based on rsmd
+# simstack
 
-This is a simtack workflow template to show how the rsmd software can be integrated with other molecular simulations software to build a sequence of simulations enabling flow of parameters and data across multiple softwares. 
+Workflow for SEI simulations based on rs@md
+
+This is a simtack workflow template to show how rs@md can be integrated with other molecular simulations software to build a sequence of simulations enabling flow of parameters and data across multiple softwares. 
 
 Figure 1 illustrates the layout of the workflow, which features the four possible simulations nodes, packmol, gromacs, rsmd and gaussian. In this workflow packmol is used to build the unit cell by generating initial xyz coordinates of the molecules for the LiPF6 EC model system, allowing the user to set the molar concentration by choosing the number of LiPF6 pairs in reference to the number of EC molecules from the gui. 
 After this initial step, the xyz file is passed to gromacs to perform an equilibration run, such that the system achieves a specific temperature. This is because the initial xyz file does not know about the temperature. For this step, it is possible to specify the kind of temperature coupling used by the gromacs engine as well as the reference temperature and number of integration steps from the gui. This step updates the xyz coordinates and writes the final velocities to a .gro formated file, which is passed as input for the rsmd node. Finally, the rsmd node allows to change the number of reactive cycles performed to the input file.
